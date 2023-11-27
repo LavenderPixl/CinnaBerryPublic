@@ -1,0 +1,19 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CinnaBerry.App"
+             xmlns:local="using:CinnaBerry"
+             RequestedThemeVariant="Dark">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+		<StyleInclude Source="avares://CinnaBerry/Assets/CinnaBerryStyles.axaml"/>
+		<FluentTheme />
+    </Application.Styles>
+	<Application.Resources>
+		<FontFamily x:Key="NunitoFont">avares://CinnaBerry/Assets/NunitoFont</FontFamily>
+	</Application.Resources>
+</Application>

@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:CinnaBerry.ViewModels"
+			 x:DataType="vm:LoginScreenViewModel"
+             mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="760"
+             x:Class="CinnaBerry.Views.LoginScreenView">
+	<Grid ColumnDefinitions="6*, 8*, 6*">
+		<StackPanel Grid.Column="1">
+			<TextBlock FontSize="60" Margin="0, 10, 0, 10">Log in</TextBlock>
+			<Border BorderThickness="1"></Border>
+
+			<TextBlock FontSize="20" Margin="0 90 0 0">Username</TextBlock>
+			<TextBox FontSize="30" Text="{Binding Username}"></TextBox>
+
+			<TextBlock FontSize="20" Margin="0 20 0 0">Password</TextBlock>
+			<TextBox FontSize="30" Text="{Binding Password}" PasswordChar="*"></TextBox>
+
+			<TextBlock Foreground="Red"
+					   FontSize="30"
+					   IsVisible="{Binding DisplayError}" Text="{Binding LoginError}"></TextBlock>
+			<Button FontSize="30"
+					Margin="0 20 0 0"
+					CornerRadius="10"
+					HorizontalAlignment="Stretch"
+					Command="{Binding Login}">
+				<TextBlock TextAlignment="Center">Log in</TextBlock>
+			</Button>
+			<Border BorderThickness="1" Margin="0 30 0 0"></Border>
+
+			<Button FontSize="30"
+					Margin="0 50 0 0"
+					CornerRadius="10"
+					HorizontalAlignment="Stretch"
+					Command="{Binding CreateUser}">
+				<TextBlock TextAlignment="Center">Create User</TextBlock>
+			</Button>
+		</StackPanel>
+
+	</Grid>
+</UserControl>

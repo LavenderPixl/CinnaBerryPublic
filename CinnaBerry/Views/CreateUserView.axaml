@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:CinnaBerry.ViewModels"
+			 x:DataType="vm:CreateUserViewModel"
+             mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="760"
+             x:Class="CinnaBerry.Views.CreateUserView">
+	<Grid ColumnDefinitions="6*, 8*, 6*">
+		<StackPanel Grid.Column="1">
+			<TextBlock FontSize="60" Margin="0, 10, 0, 10">Create User</TextBlock>
+			<Border BorderThickness="1"></Border>
+
+			<!-- Username -->
+			<TextBlock FontSize="20" Margin="0 50 0 0">Username</TextBlock>
+			<TextBlock FontSize="20" Margin="0 0 0 0" Text="{Binding ErrorMessage}"
+					   IsVisible="{Binding UsernameError}" Foreground="Red"/>
+			<TextBox FontSize="30" Text="{Binding Username}"></TextBox>
+
+			<!-- Email -->
+			<TextBlock FontSize="20" Margin="0 20 0 0">Email</TextBlock>
+			<TextBlock FontSize="20" Margin="0 0 0 0" Text="The email must be between 1 and 320 characters."
+					   IsVisible="{Binding EmailError}" Foreground="Red"/>
+
+			<TextBlock FontSize="20" Margin="0 0 0 0" Text="{Binding ErrorMessage}"
+					   IsVisible="{Binding EmailTaken}" Foreground="Red"/>
+			<TextBox FontSize="30" Text="{Binding Email}"></TextBox>
+
+			<!-- Password -->
+			<TextBlock FontSize="20" Margin="0 20 0 0">Password</TextBlock>
+			<TextBlock FontSize="20" Margin="0 0 0 0" Text="The Password must be between 1 and 501 characters."
+					   IsVisible="{Binding PasswordError}" Foreground="Red"/>
+			<TextBox FontSize="30" Text="{Binding Password}"></TextBox>
+
+			<TextBlock FontSize="20" Margin="0 20 0 0">Password</TextBlock>
+			<TextBlock FontSize="20" Margin="0 0 0 0" Text="The passwords must match."
+					   IsVisible="{Binding PasswordAgainError}" Foreground="Red"/>
+			<TextBox FontSize="30" Text="{Binding PasswordAgain}"></TextBox>
+
+			<Border BorderThickness="1" Margin="0 30 0 0"></Border>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button FontSize="30"
+					Margin="0 50 0 0"
+					CornerRadius="10"
+					Width="200" 
+					Command="{Binding BackBtn}">
+					<TextBlock TextAlignment="Center">Back</TextBlock>
+				</Button>
+				<Button FontSize="30"
+					Margin="70 50 0 0"
+					CornerRadius="10"
+					Width="200"
+					Command="{Binding CreateNewUser}">
+					<TextBlock TextAlignment="Center">Create User</TextBlock>
+				</Button>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

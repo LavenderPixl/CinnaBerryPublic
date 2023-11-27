@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:views="using:CinnaBerry.Views"
+		xmlns:v="using:CinnaBerry"
+        xmlns:vm="using:CinnaBerry.ViewModels"
+        x:DataType="vm:MainWindowViewModel"
+        x:Class="CinnaBerry.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CinnaBerry"
+		WindowStartupLocation="CenterScreen"
+		ExtendClientAreaChromeHints="NoChrome"
+		ExtendClientAreaToDecorationsHint="True"
+		CanResize="False"
+        mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="800"
+		Height="800" Width="1400" IsEnabled="{Binding MainWindowEnabled}" Background="#220901"
+		WindowState="{Binding WinState}">
+
+	<Grid RowDefinitions="40, 1*">
+		
+		<Button Classes="NaviBar" Command="{Binding CinnaBerryButton}">
+			<TextBlock Text="CinnaBerry" FontSize="20"/>
+		</Button>
+		
+		<Grid Grid.Row="0" IsVisible="{Binding LoggedIn}" Margin="115 0 0 0">
+			<StackPanel Orientation="Horizontal">
+				<Button Classes="NaviBar" Command="{Binding SwapScreen}" CommandParameter="PrivateProfile">
+					<TextBlock Text="Profile" FontSize="15"/>
+				</Button>
+				<Button Classes="NaviBar" Command="{Binding SwapScreen}" CommandParameter="PlanToWatch">
+					<TextBlock Text="Plan To Watch" FontSize="15"/>
+				</Button>
+				<Button Classes="NaviBar" Command="{Binding SwapScreen}" CommandParameter="Movies">
+					<TextBlock Text="Movies" FontSize="15"/>
+				</Button>
+				<Button Classes="NaviBar" Command="{Binding SwapScreen}" CommandParameter="Series" BorderThickness="1 0 1 0">
+					<TextBlock Text="Series" FontSize="15"/>
+				</Button>
+			</StackPanel>
+
+			<!--TOP BUTTONS! Closes program etc.-->
+			<StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+				<TextBox Text="{Binding Search}" Width="400" VerticalAlignment="Center" Classes="TBox" />
+				<Button Classes="NaviBar" Width="75" Margin="0 0 70 0">
+					<TextBlock Text="Search" FontSize="18" />
+				</Button>
+			</StackPanel>
+		</Grid>
+
+		<StackPanel IsVisible="True" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Classes="NaviBar" Width="35"
+					Command="{Binding MinimizeWindow}">
+				<TextBlock Text="-" FontSize="25" Classes="ButtonTextBlock"/>
+			</Button>
+			<Button Classes="NaviBar"  Width="35" BorderThickness="1 0 1 0"
+					Command="{Binding ExitProgram}">
+				<TextBlock Text="X" FontSize="25" Classes="ButtonTextBlock"/>
+			</Button>
+		</StackPanel>
+
+		<v:SetContentArea Grid.Row="1" Background="#621708"></v:SetContentArea>
+	</Grid>
+
+</Window>

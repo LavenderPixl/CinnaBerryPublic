@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="760"
+			 xmlns:vm="using:CinnaBerry.ViewModels"
+             x:DataType="vm:PublicProfileViewModel"
+             x:Class="CinnaBerry.Views.PublicProfileView">
+	<Grid ColumnDefinitions="5*, 5*">
+		<StackPanel Margin="30 40 0 0">
+			<Border BorderThickness="2">
+				<TextBlock FontSize="50" Text="{Binding Username}" Margin="2"/>
+			</Border>
+
+			<TextBlock FontSize="30" Text="{Binding FavGenre}" Margin="0 50 0 0" TextWrapping="Wrap"/>
+			<TextBlock FontSize="30" Text="{Binding MoviesWatched}" Margin="0 30 0 0" TextWrapping="Wrap"/>
+			<TextBlock FontSize="30" Text="{Binding SeriesWatched}" Margin="0 30 0 0" TextWrapping="Wrap"/>
+			<TextBlock FontSize="30" Text="{Binding ReviewsWritten}" Margin="0 30 0 0" TextWrapping="Wrap"/>
+			<TextBlock FontSize="30" Text="{Binding AverageRating}" Margin="0 30 0 0" TextWrapping="Wrap"/>
+
+			<Button HorizontalAlignment="Right" FontSize="30" Margin="0 40 30 0">Watch List</Button>
+		</StackPanel>
+		<ScrollViewer Grid.Column="1" Margin="0 180 0 0">
+			<ItemsControl ItemsSource="{Binding Reviews}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Border BorderThickness="2" Margin="5">
+							<StackPanel>
+								<Grid Margin="5">
+									<StackPanel Orientation="Horizontal">
+										<TextBlock Text="{Binding MediaTitle}" FontSize="25"/>
+									</StackPanel>
+
+									<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+										<TextBlock Text="{Binding Rating}" FontSize="25"></TextBlock>
+										<TextBlock Text="/10"  FontSize="25"></TextBlock>
+									</StackPanel>
+								</Grid>
+								<Border Margin="3" BorderThickness="0 1 0 0"></Border>
+								<TextBlock Text="{Binding ReviewText}" TextWrapping="Wrap" Margin="5"/>
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+	</Grid>
+	
+</UserControl>

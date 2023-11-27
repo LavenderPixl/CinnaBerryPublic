@@ -1,0 +1,88 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<!-- Add Controls for Previewer Here -->
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- ALL BUTTONS!!-->
+	<Style Selector="Button">
+		<Setter Property="Foreground" Value="#F7C59F"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="FontSize" Value="20"/>
+		<Setter Property="Background" Value="#220901"/>
+	</Style>
+	<!--ALL BORDERS!-->
+	<Style Selector="Border">
+		<Setter Property="BorderBrush" Value="#F7C59F"/>
+	</Style>
+	
+	<Style Selector="Button:pointerover/template/ContentPresenter">
+		<Setter Property="Foreground" Value="#F7C59F"/>
+	</Style>
+	
+	<Style Selector="TextBlock">
+		<!--<Setter Property="FontFamily" Value="{StaticResource NunitoFont}"/>-->
+		<Setter Property="Foreground" Value="#F7C59F"/>
+	</Style>
+
+	<Style Selector="TextBlock.ButtonTextBlock">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+	</Style>
+	<Style Selector="Button.NaviBar">
+		<Setter Property="BorderThickness" Value="1 0 0 0"/>
+		<Setter Property="BorderBrush" Value="#F7C59F"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Padding" Value="5 0 5 0"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="35"/>
+	</Style>
+	<Style Selector="Button:pointerover.NaviBar/template/ContentPresenter">
+		<Setter Property="BorderBrush" Value="#F7C59F"/>
+	</Style>
+
+	<Style Selector="Border.MovieStyling">
+		<Setter Property="BorderBrush" Value="#220901"/>
+		<Setter Property="BorderThickness" Value="3"/>
+		<Setter Property="Width" Value="240"/>
+		<Setter Property="Margin" Value="15"/>
+	</Style>
+	<Style Selector="TextBlock.MovieStyling">
+		<Setter Property="FontSize" Value="17"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+	</Style>
+
+	<!-- Movie View -->
+	<Style Selector="Button.MovieStyling">
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Margin" Value="20"/>
+	</Style>
+	
+	
+	<!-- Movie Descriptionbox visibility. -->
+	<Style Selector="Grid.DescriptionBox">
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+	<Style Selector="Grid.DescriptionBox:pointerover">
+		<Setter Property="Opacity" Value="1"/>
+	</Style>
+	
+	<Style Selector="Rectangle.DescriptionBox">
+		<Setter Property="Opacity" Value="0.6"/>
+	</Style>
+	<Style Selector="TextBlock.DescriptionBox">
+		<Setter Property="Margin" Value="5"/>
+		<Setter Property="TextWrapping" Value="Wrap"/>
+		<Setter Property="FontSize" Value="15"/>
+	</Style>
+
+	<Style Selector="TextBox.TBox">
+		<Setter Property="Foreground" Value="#F7C59F"/>
+		<Setter Property="BorderBrush" Value="#F7C59F"/>
+	</Style>
+</Styles>
